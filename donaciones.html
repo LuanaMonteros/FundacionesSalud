@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donaciones</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Agrega un archivo CSS si quieres aplicar estilos -->
+    <link rel="stylesheet" href="css/home.css"> <!-- Agrega un archivo CSS si quieres aplicar estilos -->
 </head>
 <body>
     <header>
-        <h1>Donaciones</h1>
+        
         <nav>
+            <img src="img/Fundaciones-removebg-preview1.png" alt=""  class="logo">
+
             <ul>
-                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="fundacionesArgentina.html">Fundaciones Argentina</a></li>
                 <li><a href="fundacionesInternacionales.html">Fundaciones Internacionales</a></li>
                 <li><a href="donaciones.html">Donaciones</a></li>
@@ -23,44 +25,73 @@
     <main>
         <section id="donaciones">
             <h2>Donaciones</h2>
-            <form action="procesar_donacion.php" method="POST"> <!-- Reemplaza "procesar_donacion.php" por el archivo que procesará el formulario -->
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-                <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" name="apellido" required>
-                <label for="pais">País:</label>
-                <input type="text" id="pais" name="pais" required>
-                <label for="region">Región:</label>
-                <input type="text" id="region" name="region" required>
-                <label for="fundacion">Fundación:</label>
-                <select id="fundacion" name="fundacion">
-                    <option value="fundacion1">Fundación 1</option>
-                    <option value="fundacion2">Fundación 2</option>
-                    <option value="fundacion3">Fundación 3</option>
-                    <!-- Agrega más opciones según las fundaciones disponibles -->
-                </select>
-                <label for="anonimato">¿Desea que su donación sea anónima?</label>
-                <input type="checkbox" id="anonimato" name="anonimato">
-                <label for="monto">Monto de la donación:</label>
-                <input type="number" id="monto" name="monto" required>
-                <label for="modalidad">Modalidad de donación:</label>
-                <input type="checkbox" id="transferencia" name="modalidad" value="transferencia">
-                <label for="transferencia">Transferencia</label>
-                <input type="checkbox" id="paypall" name="modalidad" value="paypall">
-                <label for="paypall">PayPal</label>
+            <form id="formulario_donaciones"> 
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" class="">
+                    <div id="nombreError" class="error-message"></div>
+                </div>
+                <div>
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" >
+                    <div id="apellidoError" class="error-message"></div>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" >
+                    <div id="emailError" class="error-message"></div>
+                </div>
+                <div>
+                    <label for="pais">País:</label>
+                    <input type="text" id="pais" name="pais" >
+                    <div id="paisError" class="error-message"></div>
+                </div>
+                <div>
+                    <label for="region">Región:</label>
+                    <input type="text" id="region" name="region" >
+                    <div id="regionError" class="error-message"></div>
+                </div>
+                <div>
+                    <label for="fundacion">Fundación:</label>
+                    <select id="fundacion" name="fundacion">
+                        <option value="fundacion1">Fundación 1</option>
+                        <option value="fundacion2">Fundación 2</option>
+                        <option value="fundacion3">Fundación 3</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="anonimato">¿Desea que su donación sea anónima?</label>
+                    <input type="checkbox" id="anonimato" name="anonimato">
+                </div>
+                <div>
+                    <label for="monto">Monto de la donación:</label>
+                    <input type="number" id="monto" name="monto" >
+                </div>
+
+               <div>
+                    <label for="modalidad">Modalidad de donación:</label>
+                    <input type="checkbox" id="transferencia" name="modalidad" value="transferencia">
+                    <label for="transferencia">Transferencia</label>
+                    <input type="checkbox" id="paypall" name="modalidad" value="paypall">
+                    <label for="paypall">PayPal</label>
+             </div>           
                 <button type="submit">Donar</button>
             </form>
+            
+            <div id="error"></div>
         </section>
     </main>
 
     <footer>
         <h3>Redes Sociales</h3>
-        <!-- Aquí puedes agregar enlaces a las redes sociales -->
+        
         <ul>
             <li><a href="https://facebook.com">Facebook</a></li>
             <li><a href="https://twitter.com">Twitter</a></li>
             <li><a href="https://instagram.com">Instagram</a></li>
         </ul>
     </footer>
+
+    <script src='app.js'></script>
 </body>
 </html>
